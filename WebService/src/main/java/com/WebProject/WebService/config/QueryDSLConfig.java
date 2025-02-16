@@ -1,4 +1,4 @@
-package com.WebProject.WebService.cofig;
+package com.WebProject.WebService.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

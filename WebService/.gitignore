@@ -1,37 +1,70 @@
-HELP.md
-.gradle
+### 🚀 기본적인 Git Ignore 설정 ###
+
+# ⚡ Maven 관련 (Maven 프로젝트의 경우)
+target/
+*.war
+*.ear
+*.iml
+.mvn/
+!mvnw
+!mvnw.cmd
+
+# ⚡ Gradle 관련 (Gradle 프로젝트의 경우)
 build/
+.gradle/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+!gradle/wrapper/gradle-wrapper.properties
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### IntelliJ IDEA ###
-.idea
+# ⚡ IntelliJ IDEA 관련
+.idea/
 *.iws
 *.iml
 *.ipr
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
+# ⚡ VS Code 관련
 .vscode/
+
+# ⚡ Eclipse 관련
+.project
+.classpath
+.settings/
+.metadata/
+
+# ⚡ OS 관련 불필요한 파일
+.DS_Store
+Thumbs.db
+
+# ⚡ 로그 파일
+logs/
+*.log
+
+# ⚡ 환경 변수 파일 (DB 비밀번호 등)
+.env
+*.env
+
+# ⚡ Spring Boot 설정 파일 (개인 설정 보호용)
+application.yml
+application-*.yml
+application.properties
+application-*.properties
+
+# ⚡ 데이터베이스 파일 (H2, SQLite 등)
+*.db
+*.mv.db
+*.h2.db
+
+# ⚡ QueryDSL 자동 생성 파일 (필요 시 추가)
+build/generated/
+generated/
+generated-sources/
+
+# ⚡ Node.js 관련 (React, Vue 포함된 프로젝트)
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnp/
+.pnp.js
+
+# ⚡ Docker 관련 (Docker 사용 시)
+docker-compose.override.yml
