@@ -1,7 +1,7 @@
 package com.WebProject.WebService.service;
 
 import com.WebProject.WebService.entity.User;
-import com.WebProject.WebService.repository.UserRepository;
+import com.WebProject.WebService.repository.user.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;

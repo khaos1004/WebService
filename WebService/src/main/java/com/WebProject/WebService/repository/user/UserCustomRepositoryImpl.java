@@ -1,4 +1,4 @@
-package com.WebProject.WebService.repository;
+package com.WebProject.WebService.repository.user;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.WebProject.WebService.entity.QUser;
@@ -7,12 +7,22 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class UserQueryDslRepository {
+public class UserCustomRepositoryImpl implements UserCustomRepository {
 
     private final JPAQueryFactory queryFactory;
 
-    public UserQueryDslRepository(JPAQueryFactory queryFactory) {
+    public UserCustomRepositoryImpl(JPAQueryFactory queryFactory) {
         this.queryFactory = queryFactory;
+    }
+
+    @Override
+    public List<User> searchUsers(String username, String email) {
+        return queryFactory.selectFrom(QUser.user)
+                .where(
+                        username != null ? QUser.user.username.eq(username) : null,
+                        email != null ? QUser.user.email.eq(email) : null
+                )
+                .fetch();
     }
 
     // 1️⃣ 특정 이름을 가진 유저 조회
