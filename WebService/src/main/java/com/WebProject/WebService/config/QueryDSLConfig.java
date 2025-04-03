@@ -8,11 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import jakarta.persistence.PersistenceContext;
 
 
-
-
 @RequiredArgsConstructor
 @Configuration
-
 public class QueryDSLConfig {
     @PersistenceContext
     private EntityManager entityManager;
