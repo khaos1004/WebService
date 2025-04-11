@@ -1,4 +1,4 @@
-package com.WebProject.WebService.business;
+package com.WebProject.WebService.common.login.business;
 
 import com.WebProject.WebService.dto.login.JwtResponse;
 import com.WebProject.WebService.dto.login.LoginRequest;
