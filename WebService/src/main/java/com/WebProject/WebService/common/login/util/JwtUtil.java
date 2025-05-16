@@ -7,15 +7,14 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-
 @Component
 public class JwtUtil {
 
     private final String accessTokenSecret = "access-secret-key-1234567890";
     private final String refreshTokenSecret = "refresh-secret-key-0987654321";
 
-    private final long accessTokenExpiryMs = 1000 * 60 * 30; // 30ºÐ
-    private final long refreshTokenExpiryMs = 1000L * 60 * 60 * 24 * 7; // 7ÀÏ
+    private final long accessTokenExpiryMs = 1000 * 60 * 30; // 30ï¿½ï¿½
+    private final long refreshTokenExpiryMs = 1000L * 60 * 60 * 24 * 7; // 7ï¿½ï¿½
 
     public String generateAccessToken(String username) {
         return generateToken(username, accessTokenExpiryMs, accessTokenSecret);

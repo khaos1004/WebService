@@ -2,6 +2,7 @@ package com.WebProject.WebService.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
@@ -11,7 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @NoArgsConstructor
-@Table(name="users", schema="user")
+@Table(name="users", schema="\"user\"")
+@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -2,24 +2,28 @@ package com.WebProject.WebService.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Builder
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user_roles", schema = "user")
+@Table(name = "user_roles", schema = "\"user\"")
 public class UserRole {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //User 다대일
+    //User
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    //Role 다대일
+    //Role
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id")
     private Role role;

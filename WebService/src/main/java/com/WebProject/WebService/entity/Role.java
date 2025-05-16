@@ -1,7 +1,9 @@
 package com.WebProject.WebService.entity;
 
+import com.WebProject.WebService.common.signup.enums.RoleEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -11,14 +13,17 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "roles", schema = "user")
+@Table(name = "roles", schema = "\"user\"")
+@Builder
 public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Enumerated(EnumType.STRING) // 👈 반드시 필요
+    @Column(nullable = false)
+    private RoleEnum name;
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserRole> userRoles;
