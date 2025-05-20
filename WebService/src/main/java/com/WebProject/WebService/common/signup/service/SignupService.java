@@ -25,7 +25,7 @@ public class SignupService {
     private final SignupUserRoleRepository userRoleRepository;
 
     public SignupResponse signup(SignupRequest request) {
-        if (signupUsersRepository.findByEmail(request.getEmail())) {
+        if (signupUsersRepository.existsByEmail(request.getEmail())) {
             throw new IllegalArgumentException("이미 존재하는 아이디입니다.");
         }
 
@@ -41,8 +41,9 @@ public class SignupService {
         signupUsersRepository.save(user);
 
         // 권한 조회 or 생성
-        Role role = signupRolrRepository.findById(user.getId())
-                .orElseGet(() -> signupRolrRepository.save(Role.builder().name(RoleEnum.Normal).build()));
+        Role role = signupRolrRepository.findByName(RoleEnum.NORMAL)
+                .orElseThrow(() -> new IllegalStateException("기본 권한이 존재하지 않습니다. DB에 ROLE을 먼저 넣어주세요."));
+
 
         // 유저 권한 저장
         UserRole userRole = UserRole.builder()
