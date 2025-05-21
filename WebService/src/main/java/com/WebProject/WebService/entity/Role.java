@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "roles", schema = "\"user\"")
+@Table(name = "roles", schema = "\"common\"")
 @Builder
 public class Role {
 

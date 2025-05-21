@@ -20,6 +20,6 @@
         <module name="WebService.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="23" />
+    <bytecodeTargetLevel target="21" />
   </component>
 </project>

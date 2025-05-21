@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user_roles", schema = "\"user\"")
+@Table(name = "user_roles", schema = "\"common\"")
 public class UserRole {
 
     @Id
